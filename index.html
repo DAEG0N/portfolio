@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio of Adilson Alves Dantas — Web Developer & Digital Operations Professional." />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>Adilson Alves Dantas — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Home">AD<span>.</span></a>
+    <nav>
+      <a href="#work" data-i18n="navWork">Work</a>
+      <a href="#profile" data-i18n="navProfile">Profile</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang" id="langToggle" aria-label="Switch language">PT</button>
+      <a class="mini-cta" href="mailto:adilsondantas2015@gmail.com" data-i18n="hireMe">Hire me</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span><span data-i18n="availability">Available for remote opportunities</span></div>
+        <h1><span data-i18n="heroLine1">Web experiences</span><br><em data-i18n="heroLine2">built with purpose.</em></h1>
+        <p class="hero-lead" data-i18n="heroLead">I combine front-end development, data-driven interfaces and more than four years of real-world experience in operations, customer support and process organization.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#work" data-i18n="viewWork">View selected work</a>
+          <a class="btn secondary" href="resume-en.html" target="_blank" rel="noreferrer" data-i18n="resumeEn">Resume · EN</a>
+          <a class="btn secondary" href="resume-pt.html" target="_blank" rel="noreferrer" data-i18n="resumePt">CV · PT-BR</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="profile-mark">A</div>
+        <div>
+          <span class="label" data-i18n="roleLabel">FOCUS</span>
+          <strong data-i18n="roleValue">Front-end · Digital Operations</strong>
+        </div>
+        <div>
+          <span class="label" data-i18n="basedLabel">BASED IN</span>
+          <strong>Aracaju · Brazil</strong>
+        </div>
+        <div>
+          <span class="label" data-i18n="stackLabel">CORE STACK</span>
+          <strong>HTML · CSS · JavaScript · React · TypeScript</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section id="work" class="work-section section-shell">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">01 / SELECTED WORK</span>
+          <h2 data-i18n="selectedWork">Projects designed to solve real problems.</h2>
+        </div>
+        <p data-i18n="selectedIntro">Interfaces, data products and digital experiences developed from concept to implementation.</p>
+      </div>
+
+      <article class="project project-featured">
+        <div class="project-visual chart-visual" aria-hidden="true">
+          <div class="browser-bar"><i></i><i></i><i></i><span>daegoncharts.com.br</span></div>
+          <div class="chart-screen">
+            <div class="chart-title">DAEGON 100</div>
+            <div class="chart-item"><b>1</b><span><strong>Disease</strong><small>Lady Gaga</small></span><em>▲</em></div>
+            <div class="chart-item"><b>2</b><span><strong>APT.</strong><small>ROSÉ & Bruno Mars</small></span><em>—</em></div>
+            <div class="chart-item"><b>3</b><span><strong>Espresso</strong><small>Sabrina Carpenter</small></span><em>▼</em></div>
+          </div>
+        </div>
+        <div class="project-copy">
+          <div class="project-index">01</div>
+          <p class="project-type" data-i18n="dcType">DATA PLATFORM · WEB APPLICATION</p>
+          <h3>Daegon Charts</h3>
+          <p data-i18n="dcDesc">An independent music chart platform with weekly rankings, historical archives, artist and album pages, movement data, responsive interfaces and a growing data layer.</p>
+          <div class="tags"><span>React</span><span>Supabase</span><span>Recharts</span><span>Responsive UI</span><span>Data UX</span></div>
+          <div class="project-links">
+            <a href="https://daegoncharts.com.br/" target="_blank" rel="noreferrer" data-i18n="liveSite">Live site ↗</a>
+            <a href="https://github.com/dantaswt/daegon-charts" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="mini-visual vita-visual"><div class="vita-word">VITA</div><p>Educação que transforma.</p><span>360º</span></div>
+          <div class="card-copy">
+            <p class="project-type">WEB DESIGN · FRONT-END</p>
+            <h3>Colégio Vita — Redesign</h3>
+            <p data-i18n="vitaDesc">A modern, responsive institutional redesign focused on hierarchy, storytelling, accessibility, strong CTAs and a 360° campus experience.</p>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>UX/UI</span></div>
+            <div class="project-links">
+              <a href="https://dantaswt.github.io/colegio-vita/" target="_blank" rel="noreferrer" data-i18n="liveDemo">Live demo ↗</a>
+              <a href="https://github.com/dantaswt/colegio-vita" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="mini-visual brazil-visual"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div><strong>HOT 100</strong><span>1999—2013</span></div>
+          <div class="card-copy">
+            <p class="project-type">DATA VISUALIZATION · REACT</p>
+            <h3>Brazil Charts</h3>
+            <p data-i18n="brDesc">A historical music-chart interface built with React and TypeScript, combining structured datasets, routing and chart-oriented data visualization.</p>
+            <div class="tags"><span>React 19</span><span>TypeScript</span><span>Vite</span><span>Recharts</span></div>
+            <div class="project-links"><a href="https://github.com/dantaswt/brazil-charts" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project-card wide">
+          <div class="mini-visual awards-visual"><div class="award-a">A</div><div><strong>DAEGON</strong><span>AWARDS</span></div></div>
+          <div class="card-copy">
+            <p class="project-type">INTERACTIVE ARCHIVE · FRONT-END</p>
+            <h3>Daegon Awards</h3>
+            <p data-i18n="awardsDesc">An interactive awards archive with edition navigation, category browsing, search, winner states and responsive presentation.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Search UI</span></div>
+            <div class="project-links"><a href="https://github.com/dantaswt/daegon-awards" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="profile" class="profile-section section-shell">
+      <div class="section-heading compact"><span class="kicker">02 / PROFILE</span><h2 data-i18n="profileTitle">Development with operational context.</h2></div>
+      <div class="profile-grid">
+        <div class="profile-story">
+          <p class="big-copy" data-i18n="profileStory">I am building my career in technology on top of a strong professional foundation in administration, legal support, customer service, CRM, financial routines and process automation.</p>
+          <p data-i18n="profileStory2">That combination helps me think beyond the interface: I care about the person using the product, the workflow behind it and whether the solution actually makes work easier.</p>
+        </div>
+        <div class="capability-list">
+          <div><span>01</span><strong data-i18n="cap1">Responsive front-end development</strong></div>
+          <div><span>02</span><strong data-i18n="cap2">Data-heavy interfaces & dashboards</strong></div>
+          <div><span>03</span><strong data-i18n="cap3">Digital operations & process organization</strong></div>
+          <div><span>04</span><strong data-i18n="cap4">Customer support & CRM workflows</strong></div>
+          <div><span>05</span><strong data-i18n="cap5">Document design & editorial layout</strong></div>
+        </div>
+      </div>
+
+      <div class="experience-strip">
+        <div><span data-i18n="expYears">4+ years</span><small data-i18n="expYearsSub">professional experience</small></div>
+        <div><span>React / TS</span><small data-i18n="modernStack">modern front-end stack</small></div>
+        <div><span>CRM + Excel</span><small data-i18n="opsTools">operations toolkit</small></div>
+        <div><span>PT · EN · ES</span><small data-i18n="languages">native / intermediate / intermediate</small></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section section-shell">
+      <p class="kicker">03 / CONTACT</p>
+      <h2 data-i18n="contactTitle">Let’s build something useful.</h2>
+      <p data-i18n="contactText">Open to remote roles, freelance projects and collaborations in front-end development, digital operations, support and data-oriented products.</p>
+      <div class="contact-links">
+        <a href="mailto:adilsondantas2015@gmail.com">adilsondantas2015@gmail.com ↗</a>
+        <a href="https://github.com/dantaswt" target="_blank" rel="noreferrer">github.com/dantaswt ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Adilson Alves Dantas</span><span>Built for clarity, usefulness & impact.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
