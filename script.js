@@ -67,14 +67,3 @@ document.querySelectorAll(".scene-card").forEach(card=>{
  io.observe(card);
 });
 
-/* Load the yearbook avatar from a text payload so GitHub Pages renders it reliably. */
-fetch("assets/avatar-yearbook.b64?v=1")
-  .then(r => r.text())
-  .then(b64 => {
-    const img = document.querySelector(".portrait-placeholder img");
-    if (img) {
-      img.src = "data:image/webp;base64," + b64.trim();
-      img.style.opacity = "1";
-    }
-  })
-  .catch(() => {});
