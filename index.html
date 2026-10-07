@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&family=Special+Elite&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=school-1">
+<link rel="stylesheet" href="styles.css?v=school-2">
 </head>
 <body>
 <div class="paper-noise" aria-hidden="true"></div>
@@ -23,8 +23,15 @@
     <a href="#contact" data-i18n="navContact">Contact</a>
   </nav>
   <div class="school-actions">
-    <button id="langToggle">PT</button>
-    <a class="ticket" href="resume-en.html" target="_blank">Resume ↗</a>
+    <label class="lang-picker">
+      <span class="sr-only">Language</span>
+      <select id="langSelect" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="pt">PT</option>
+        <option value="es">ES</option>
+      </select>
+    </label>
+    <a class="ticket" href="resume-en.html" target="_blank" data-i18n="resumeLink">Resume ↗</a>
   </div>
 </header>
 
@@ -32,7 +39,7 @@
 <section class="hero-stage">
   <div class="hallway-lines" aria-hidden="true"></div>
   <div class="hero-board">
-    <p class="scribble">WILDCAT CREATIVE DEPT. / CLASS OF NOW</p>
+    <p class="scribble" data-i18n="heroKicker">CREATIVE DEPT. / CLASS OF NOW</p>
     <h1><span data-i18n="heroA">Web, data &</span><br><em data-i18n="heroB">digital operations.</em></h1>
     <p class="hero-lead" data-i18n="heroLead">I turn complex workflows, information and ideas into clear digital products — with a little stage energy.</p>
     <div class="menu-sheet">
@@ -44,14 +51,14 @@
   </div>
 
   <aside class="locker-card">
-    <div class="locker-top"><span>LOCKER 07</span><b>AD</b></div>
+    <div class="locker-top"><span data-i18n="locker">LOCKER 07</span><b>AD</b></div>
     <div class="polaroid">
-      <div class="portrait-placeholder">AD</div>
+      <div class="portrait-placeholder"><img src="assets/avatar-yearbook.webp" alt="Animated yearbook portrait of Adilson Dantas"></div>
       <strong>Adilson Dantas</strong>
-      <small>Builder · Operator · Designer</small>
+      <small data-i18n="roleLine">Builder · Operator · Designer</small>
     </div>
     <div class="locker-stickers">
-      <span>WEB</span><span>CRM</span><span>DATA</span><span>OPS</span>
+      <span>WEB</span><span>CRM</span><span data-i18n="dataSticker">DATA</span><span data-i18n="opsSticker">OPS</span>
     </div>
   </aside>
 </section>
@@ -60,38 +67,32 @@
   <header class="scene-title">
     <div class="film-icon">▦</div>
     <div>
-      <span>SCENE SELECTION</span>
+      <span data-i18n="sceneSelection">SCENE SELECTION</span>
       <h2 data-i18n="projectsTitle">Featured projects</h2>
     </div>
   </header>
 
   <div class="scene-grid">
     <article class="scene-card red">
-      <a href="https://daegoncharts.com.br/" target="_blank" class="scene-thumb charts-thumb">
-        <span class="scene-number">1</span><div class="thumb-symbol">100</div>
-      </a>
+      <a href="https://daegoncharts.com.br/" target="_blank" class="scene-thumb charts-thumb"><span class="scene-number">1</span><div class="thumb-symbol">100</div></a>
       <div class="scene-copy">
         <h3>Daegon Charts</h3>
         <p data-i18n="chartsDesc">Music-chart platform with weekly rankings, archives, artist and album pages, historical data and responsive chart experiences.</p>
-        <div class="scene-links"><a href="https://daegoncharts.com.br/" target="_blank">Live ↗</a><a href="https://github.com/dantaswt/daegon-charts" target="_blank">GitHub ↗</a></div>
+        <div class="scene-links"><a href="https://daegoncharts.com.br/" target="_blank" data-i18n="liveLink">Live ↗</a><a href="https://github.com/dantaswt/daegon-charts" target="_blank">GitHub ↗</a></div>
       </div>
     </article>
 
     <article class="scene-card blue">
-      <a href="https://dantaswt.github.io/daegon-music/" target="_blank" class="scene-thumb music-thumb">
-        <span class="scene-number">2</span><div class="thumb-symbol">♪</div>
-      </a>
+      <a href="https://dantaswt.github.io/daegon-music/" target="_blank" class="scene-thumb music-thumb"><span class="scene-number">2</span><div class="thumb-symbol">♪</div></a>
       <div class="scene-copy">
         <h3>Daegon Music</h3>
         <p data-i18n="musicDesc">A streaming-chart experience inspired by editorial music platforms, reading weekly Songs, Albums and Artists data.</p>
-        <div class="scene-links"><a href="https://dantaswt.github.io/daegon-music/" target="_blank">Live ↗</a><a href="https://github.com/dantaswt/daegon-music" target="_blank">GitHub ↗</a></div>
+        <div class="scene-links"><a href="https://dantaswt.github.io/daegon-music/" target="_blank" data-i18n="liveLink">Live ↗</a><a href="https://github.com/dantaswt/daegon-music" target="_blank">GitHub ↗</a></div>
       </div>
     </article>
 
     <article class="scene-card gold">
-      <a href="https://github.com/dantaswt/daegon" target="_blank" class="scene-thumb chat-thumb">
-        <span class="scene-number">3</span><div class="thumb-symbol">💬</div>
-      </a>
+      <a href="https://github.com/dantaswt/daegon" target="_blank" class="scene-thumb chat-thumb"><span class="scene-number">3</span><div class="thumb-symbol">💬</div></a>
       <div class="scene-copy">
         <h3>Daegon Chat</h3>
         <p data-i18n="chatDesc">CRM and messaging concept shaped by hands-on experience with customer service, WhatsApp workflows and administrative operations.</p>
@@ -100,9 +101,7 @@
     </article>
 
     <article class="scene-card green">
-      <a href="https://github.com/dantaswt/daegon-educa" target="_blank" class="scene-thumb educa-thumb">
-        <span class="scene-number">4</span><div class="thumb-symbol">A+</div>
-      </a>
+      <a href="https://github.com/dantaswt/daegon-educa" target="_blank" class="scene-thumb educa-thumb"><span class="scene-number">4</span><div class="thumb-symbol">A+</div></a>
       <div class="scene-copy">
         <h3>Daegon Educa</h3>
         <p data-i18n="educaDesc">School-management product inspired by real administrative routines: enrollment, students, teachers, grades, calendars and report cards.</p>
@@ -111,9 +110,7 @@
     </article>
 
     <article class="scene-card cream wide">
-      <a href="https://github.com/dantaswt/daegon-school" target="_blank" class="scene-thumb school-thumb">
-        <span class="scene-number">5</span><div class="thumb-symbol">🏫</div>
-      </a>
+      <a href="https://github.com/dantaswt/daegon-school" target="_blank" class="scene-thumb school-thumb"><span class="scene-number">5</span><div class="thumb-symbol">🏫</div></a>
       <div class="scene-copy">
         <h3>Daegon School</h3>
         <p data-i18n="schoolDesc">An original school website concept focused on clear institutional communication, responsive structure and a stronger digital experience.</p>
@@ -122,13 +119,13 @@
     </article>
   </div>
 
-  <div class="scene-pagination"><b>1–5</b><span>6–10</span><span>11–15</span><a href="#home">Main Menu</a></div>
+  <div class="scene-pagination"><b>1–5</b><span>6–10</span><span>11–15</span><a href="#home" data-i18n="mainMenu">Main Menu</a></div>
 </section>
 
 <section class="yearbook" id="profile">
   <div class="yearbook-page">
     <div class="yearbook-heading">
-      <span>PLAYER PROFILE / YEARBOOK</span>
+      <span data-i18n="profileKicker">PLAYER PROFILE / YEARBOOK</span>
       <h2 data-i18n="profileTitle">The person behind the projects.</h2>
       <p data-i18n="profileIntro">A background that crosses operations, education, legal support, CRM, editorial production and modern web development.</p>
     </div>
@@ -136,137 +133,96 @@
     <div class="profile-story-grid">
       <article class="profile-note big-note">
         <span class="tape"></span>
-        <p class="note-kicker">BACKGROUND</p>
+        <p class="note-kicker" data-i18n="backgroundLabel">BACKGROUND</p>
         <h3>Adilson Alves Dantas</h3>
         <p data-i18n="profileText">My background connects administration, legal support, customer service, CRM, financial routines, school operations, editorial production and process organization with web development and product thinking.</p>
         <p data-i18n="profileText2">That mix shapes how I build: I think about the person operating the system, the data behind the screen, the workflow around it and the points where friction can be removed.</p>
       </article>
 
       <article class="class-card skills-card">
-        <span>TECH CLASS SCHEDULE</span>
+        <span data-i18n="techSchedule">TECH CLASS SCHEDULE</span>
         <div class="skill-groups">
-          <div class="skill-group">
-            <b>Frontend</b>
-            <p>HTML · CSS · JavaScript · React · TypeScript · Responsive UI</p>
-          </div>
-          <div class="skill-group">
-            <b>App Architecture</b>
-            <p>TanStack Start · TanStack Router · TanStack Query · Vite · SSR · Server Functions</p>
-          </div>
-          <div class="skill-group">
-            <b>Data & Backend</b>
-            <p>Supabase · PostgreSQL · REST APIs · JSON · CSV · Google Sheets · Data Modeling</p>
-          </div>
-          <div class="skill-group">
-            <b>UI & Visualization</b>
-            <p>Tailwind CSS · Recharts · Dashboard Design · Chart Interfaces · Data-driven UI</p>
-          </div>
-          <div class="skill-group">
-            <b>Quality & Workflow</b>
-            <p>Git · GitHub · GitHub Actions · Vercel · Netlify · Playwright · QA · Content Validation</p>
-          </div>
-          <div class="skill-group">
-            <b>AI & Automation</b>
-            <p>AI-assisted development · LLM workflows · prompt design · research automation · process automation</p>
-          </div>
+          <div class="skill-group"><b data-i18n="skillFrontend">Frontend</b><p data-i18n="skillFrontendDesc">HTML · CSS · JavaScript · React · TypeScript · Responsive UI</p></div>
+          <div class="skill-group"><b data-i18n="skillArchitecture">App Architecture</b><p data-i18n="skillArchitectureDesc">TanStack Start · TanStack Router · TanStack Query · Vite · SSR · Server Functions</p></div>
+          <div class="skill-group"><b data-i18n="skillData">Data & Backend</b><p data-i18n="skillDataDesc">Supabase · PostgreSQL · REST APIs · JSON · CSV · Google Sheets · Data Modeling</p></div>
+          <div class="skill-group"><b data-i18n="skillUi">UI & Visualization</b><p data-i18n="skillUiDesc">Tailwind CSS · Recharts · Dashboard Design · Chart Interfaces · Data-driven UI</p></div>
+          <div class="skill-group"><b data-i18n="skillQuality">Quality & Workflow</b><p data-i18n="skillQualityDesc">Git · GitHub · GitHub Actions · Vercel · Netlify · Playwright · QA · Content Validation</p></div>
+          <div class="skill-group"><b data-i18n="skillAi">AI & Automation</b><p data-i18n="skillAiDesc">AI-assisted development · LLM workflows · prompt design · research automation · process automation</p></div>
         </div>
       </article>
     </div>
 
     <div class="clubs-board">
-      <header>
-        <span>CLUBS & ACTIVITIES</span>
-        <h3>Tools I actually use across the projects.</h3>
-      </header>
+      <header><span data-i18n="clubsLabel">CLUBS & ACTIVITIES</span><h3 data-i18n="clubsTitle">Tools I actually use across the projects.</h3></header>
       <div class="club-grid">
-        <div><b>React 19</b><span>Interfaces, state, reusable components</span></div>
-        <div><b>TypeScript</b><span>Typed front-end and product logic</span></div>
-        <div><b>TanStack</b><span>Routing, data fetching and app structure</span></div>
-        <div><b>Supabase</b><span>PostgreSQL, data layer and backend workflows</span></div>
-        <div><b>Vite</b><span>Development and build tooling</span></div>
-        <div><b>Recharts</b><span>Charts, dashboards and ranking visualizations</span></div>
-        <div><b>APIs</b><span>Apple Music, Spotify, REST and external data sources</span></div>
-        <div><b>Google Sheets</b><span>Operational datasets, chart data and live sources</span></div>
-        <div><b>Power BI</b><span>Reporting and business data visualization</span></div>
-        <div><b>AI</b><span>Development support, workflow design, research and automation</span></div>
-        <div><b>Git / GitHub</b><span>Version control, repositories and deployment workflows</span></div>
-        <div><b>Responsive UX</b><span>Desktop/mobile behavior, hierarchy and usability</span></div>
+        <div><b>React 19</b><span data-i18n="reactDesc">Interfaces, state, reusable components</span></div>
+        <div><b>TypeScript</b><span data-i18n="tsDesc">Typed front-end and product logic</span></div>
+        <div><b>TanStack</b><span data-i18n="tanstackDesc">Routing, data fetching and app structure</span></div>
+        <div><b>Supabase</b><span data-i18n="supabaseDesc">PostgreSQL, data layer and backend workflows</span></div>
+        <div><b>Vite</b><span data-i18n="viteDesc">Development and build tooling</span></div>
+        <div><b>Recharts</b><span data-i18n="rechartsDesc">Charts, dashboards and ranking visualizations</span></div>
+        <div><b>APIs</b><span data-i18n="apisDesc">Apple Music, Spotify, REST and external data sources</span></div>
+        <div><b>Google Sheets</b><span data-i18n="sheetsDesc">Operational datasets, chart data and live sources</span></div>
+        <div><b>Power BI</b><span data-i18n="powerBiDesc">Reporting and business data visualization</span></div>
+        <div><b>AI</b><span data-i18n="aiDesc">Development support, workflow design, research and automation</span></div>
+        <div><b>Git / GitHub</b><span data-i18n="gitDesc">Version control, repositories and deployment workflows</span></div>
+        <div><b data-i18n="responsiveUx">Responsive UX</b><span data-i18n="responsiveUxDesc">Desktop/mobile behavior, hierarchy and usability</span></div>
       </div>
     </div>
 
     <div class="experience-board">
-      <div class="experience-title">
-        <span>WORK EXPERIENCE / TRANSCRIPT</span>
-        <h3 data-i18n="experienceTitle">Professional experience behind the portfolio.</h3>
-      </div>
+      <div class="experience-title"><span data-i18n="experienceLabel">WORK EXPERIENCE / TRANSCRIPT</span><h3 data-i18n="experienceTitle">Professional experience behind the portfolio.</h3></div>
 
       <article class="experience-row">
-        <div class="experience-date">2026 — NOW</div>
+        <div class="experience-date" data-i18n="dateNow">2026 — NOW</div>
         <div class="experience-copy">
-          <h4>Legal Administrative Assistant</h4>
-          <b>Coelho & Gaviolli Advogados</b>
+          <h4 data-i18n="roleLegal">Legal Administrative Assistant</h4><b>Coelho & Gaviolli Advogados</b>
           <p data-i18n="expLegal">Legal-administrative support involving document preparation and review, procedural deadlines, file organization, legal research and communication with stakeholders.</p>
-          <div class="experience-tags"><span>Legal Ops</span><span>Documents</span><span>Deadlines</span><span>Research</span></div>
+          <div class="experience-tags"><span data-i18n="tagLegalOps">Legal Ops</span><span data-i18n="tagDocuments">Documents</span><span data-i18n="tagDeadlines">Deadlines</span><span data-i18n="tagResearch">Research</span></div>
         </div>
       </article>
 
       <article class="experience-row">
         <div class="experience-date">2025 — 2026</div>
         <div class="experience-copy">
-          <h4>Administrative & Commercial Assistant</h4>
-          <b>Colégio Vita</b>
+          <h4 data-i18n="roleCommercial">Administrative & Commercial Assistant</h4><b>Colégio Vita</b>
           <p data-i18n="expVita">Administrative and commercial routines, CRM/customer support, proposals, contracts, reports, spreadsheets, financial follow-up and process organization.</p>
-          <div class="experience-tags"><span>CRM</span><span>Customer Support</span><span>Commercial</span><span>Spreadsheets</span></div>
+          <div class="experience-tags"><span>CRM</span><span data-i18n="tagSupport">Customer Support</span><span data-i18n="tagCommercial">Commercial</span><span data-i18n="tagSpreadsheets">Spreadsheets</span></div>
         </div>
       </article>
 
       <article class="experience-row">
         <div class="experience-date">2023 — 2025</div>
         <div class="experience-copy">
-          <h4>Administrative Assistant</h4>
-          <b>Conectando Negócios</b>
+          <h4 data-i18n="roleAdmin">Administrative Assistant</h4><b>Conectando Negócios</b>
           <p data-i18n="expConectando">Administrative and operational support across documentation, customer service, reports, spreadsheets, financial routines and process automation.</p>
-          <div class="experience-tags"><span>Operations</span><span>Finance</span><span>Automation</span><span>Back Office</span></div>
+          <div class="experience-tags"><span data-i18n="tagOperations">Operations</span><span data-i18n="tagFinance">Finance</span><span data-i18n="tagAutomation">Automation</span><span>Back Office</span></div>
         </div>
       </article>
 
       <article class="experience-row">
         <div class="experience-date">2022 — 2023</div>
         <div class="experience-copy">
-          <h4>Administrative Assistant</h4>
-          <b>Colégio São Paulo</b>
+          <h4 data-i18n="roleAdmin">Administrative Assistant</h4><b>Colégio São Paulo</b>
           <p data-i18n="expSchool">School administration using Hust Chat and WhatsApp bot workflows, plus ActiveSoft for student, teacher, subject and calendar registration, enrollment, grades and report-card closing.</p>
-          <div class="experience-tags"><span>Hust Chat</span><span>WhatsApp</span><span>ActiveSoft</span><span>School Ops</span></div>
+          <div class="experience-tags"><span>Hust Chat</span><span>WhatsApp</span><span>ActiveSoft</span><span data-i18n="tagSchoolOps">School Ops</span></div>
         </div>
       </article>
 
       <article class="experience-row editorial-row">
-        <div class="experience-date">3 YEARS</div>
+        <div class="experience-date" data-i18n="threeYears">3 YEARS</div>
         <div class="experience-copy">
-          <h4>Editorial Layout & Design Experience</h4>
-          <b>Diagramming / Editorial Production</b>
+          <h4 data-i18n="roleEditorial">Editorial Layout & Design Experience</h4><b data-i18n="editorialProduction">Diagramming / Editorial Production</b>
           <p data-i18n="expEditorial">Three years of experience with page layout and editorial production, building visual hierarchy, organizing information and preparing polished materials.</p>
-          <div class="experience-tags"><span>Layout</span><span>Editorial</span><span>Visual Hierarchy</span><span>Design</span></div>
+          <div class="experience-tags"><span data-i18n="tagLayout">Layout</span><span data-i18n="tagEditorial">Editorial</span><span data-i18n="tagHierarchy">Visual Hierarchy</span><span>Design</span></div>
         </div>
       </article>
     </div>
 
     <div class="education-strip">
-      <article>
-        <span>NOW STUDYING</span>
-        <h4>Systems Analysis & Development</h4>
-        <p>Universidade Estácio de Sá · 2023 — present</p>
-      </article>
-      <article>
-        <span>DEGREE</span>
-        <h4>Pedagogy</h4>
-        <p>Universidade Federal de Sergipe · 2019 — 2022</p>
-      </article>
-      <article>
-        <span>COURSEWORK</span>
-        <h4>Front-end · Power BI · Programming Logic</h4>
-        <p>HTML · CSS · JavaScript · React · Power BI · Logic</p>
-      </article>
+      <article><span data-i18n="nowStudying">NOW STUDYING</span><h4 data-i18n="adsDegree">Systems Analysis & Development</h4><p data-i18n="adsSchool">Universidade Estácio de Sá · 2023 — present</p></article>
+      <article><span data-i18n="degreeLabel">DEGREE</span><h4 data-i18n="pedagogyDegree">Pedagogy</h4><p>Universidade Federal de Sergipe · 2019 — 2022</p></article>
+      <article><span data-i18n="courseworkLabel">COURSEWORK</span><h4 data-i18n="courseworkTitle">Front-end · Power BI · Programming Logic</h4><p data-i18n="courseworkDesc">HTML · CSS · JavaScript · React · Power BI · Logic</p></article>
     </div>
   </div>
 </section>
@@ -275,20 +231,20 @@
   <div class="curtain left"></div><div class="curtain right"></div>
   <div class="contact-card">
     <span class="star-row">★ ★ ★</span>
-    <p class="scribble">FINAL SCENE</p>
+    <p class="scribble" data-i18n="finalScene">FINAL SCENE</p>
     <h2 data-i18n="contactTitle">Let’s build the next project.</h2>
     <p data-i18n="contactText">Remote opportunities, web projects, operations, support and digital product work.</p>
     <div class="contact-links">
-      <a href="mailto:adilsondantas2015@gmail.com">Email me ↗</a>
+      <a href="mailto:adilsondantas2015@gmail.com" data-i18n="emailMe">Email me ↗</a>
       <a href="https://github.com/dantaswt" target="_blank">GitHub ↗</a>
-      <a href="resume-en.html" target="_blank">Resume EN ↗</a>
-      <a href="resume-pt.html" target="_blank">CV PT-BR ↗</a>
+      <a href="resume-en.html" target="_blank" data-i18n="resumeEn">Resume EN ↗</a>
+      <a href="resume-pt.html" target="_blank" data-i18n="resumePt">CV PT-BR ↗</a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><span>AD / PORTFOLIO</span><span>Aracaju, Brazil · 2026</span></footer>
-<script src="script.js?v=school-1"></script>
+<footer><span data-i18n="footerLeft">AD / PORTFOLIO</span><span data-i18n="footerRight">Aracaju, Brazil · 2026</span></footer>
+<script src="script.js?v=school-2"></script>
 </body>
 </html>
