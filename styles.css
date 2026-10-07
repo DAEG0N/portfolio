@@ -106,3 +106,62 @@ footer{background:#171b27;color:#d7d0c1;padding:22px 5vw;display:flex;justify-co
   box-shadow:none;
   display:block;
 }
+
+
+/* Motion system */
+.reveal-on-scroll{
+  opacity:0;
+  transform:translateY(34px) scale(.985);
+  filter:blur(2px);
+  transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),filter .7s ease;
+  will-change:opacity,transform;
+}
+.reveal-on-scroll.from-left{transform:translateX(-42px) rotate(-1.2deg)}
+.reveal-on-scroll.from-right{transform:translateX(42px) rotate(1.2deg)}
+.reveal-on-scroll.is-visible{opacity:1;transform:none;filter:none}
+
+.book-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px auto 30px;position:relative;z-index:4}
+.book-arrow{width:42px;height:42px;border:2px solid #24375a;background:#fffdf8;color:#24375a;font:800 18px var(--mono);cursor:pointer;box-shadow:3px 3px 0 #d9c8a8;transition:transform .2s ease,background .2s ease,color .2s ease}
+.book-arrow:hover{transform:translateY(-2px) rotate(-2deg);background:#24375a;color:#fff}
+.book-page-label{font:700 11px var(--mono);min-width:52px;text-align:center;color:#8f2431}
+.book-dots{display:flex;gap:6px}.book-dots span{width:7px;height:7px;border-radius:50%;background:#b9ad9d;transition:.25s}.book-dots span.active{background:#8f2431;transform:scale(1.35)}
+
+.yearbook-page.book-enabled{perspective:1800px}
+.book-enabled .book-sheet{display:none;transform-origin:left center}
+.book-enabled .book-sheet.active{display:block;animation:pageIn .7s cubic-bezier(.2,.75,.2,1) both}
+.book-enabled .book-sheet.turn-out{display:block;position:absolute;left:0;right:0;animation:pageOut .45s ease both;pointer-events:none}
+@keyframes pageIn{0%{opacity:0;transform:rotateY(-15deg) translateX(24px);filter:blur(3px)}100%{opacity:1;transform:none;filter:none}}
+@keyframes pageOut{0%{opacity:1;transform:none}100%{opacity:0;transform:rotateY(18deg) translateX(-20px)}}
+
+.locker-card{animation:lockerFloat 4.8s ease-in-out infinite}
+.polaroid{animation:polaroidDrift 6s ease-in-out infinite}
+.locker-stickers span:nth-child(1){animation:stickerPop 2.8s ease-in-out infinite}
+.locker-stickers span:nth-child(2){animation:stickerPop 2.8s .35s ease-in-out infinite}
+.locker-stickers span:nth-child(3){animation:stickerPop 2.8s .7s ease-in-out infinite}
+.locker-stickers span:nth-child(4){animation:stickerPop 2.8s 1.05s ease-in-out infinite}
+.school-brand span{animation:brandPulse 3.2s ease-in-out infinite}
+.scene-thumb .thumb-symbol{animation:thumbFloat 3.6s ease-in-out infinite}
+.scene-card:nth-child(even) .thumb-symbol{animation-delay:.6s}
+.star-row{display:inline-block;animation:starGlow 2.4s ease-in-out infinite}
+.menu-sheet a span{display:inline-block;animation:menuNudge 2.6s ease-in-out infinite}
+.menu-sheet a:nth-child(2) span{animation-delay:.3s}.menu-sheet a:nth-child(3) span{animation-delay:.6s}.menu-sheet a:nth-child(4) span{animation-delay:.9s}
+
+@keyframes lockerFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes polaroidDrift{0%,100%{transform:rotate(2deg)}50%{transform:rotate(-.7deg) translateY(-3px)}}
+@keyframes stickerPop{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+@keyframes brandPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}50%{box-shadow:0 0 0 7px rgba(255,255,255,.12)}}
+@keyframes thumbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes starGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(216,172,55,0));transform:scale(1)}50%{filter:drop-shadow(0 0 8px rgba(216,172,55,.75));transform:scale(1.03)}}
+@keyframes menuNudge{0%,85%,100%{transform:translateX(0)}90%{transform:translateX(4px)}95%{transform:translateX(-2px)}}
+
+.contact-stage.reveal-contact .curtain.left{animation:curtainLeft .9s cubic-bezier(.2,.8,.2,1) forwards}
+.contact-stage.reveal-contact .curtain.right{animation:curtainRight .9s cubic-bezier(.2,.8,.2,1) forwards}
+.contact-stage.reveal-contact .contact-card{animation:finalCard .8s .18s cubic-bezier(.2,.8,.2,1) both}
+@keyframes curtainLeft{to{transform:translateX(-38%)}}
+@keyframes curtainRight{to{transform:translateX(38%)}}
+@keyframes finalCard{from{opacity:0;transform:scale(.9) translateY(30px)}to{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal-on-scroll{opacity:1!important;transform:none!important;filter:none!important}
+}
