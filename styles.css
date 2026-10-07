@@ -87,3 +87,22 @@ footer{background:#171b27;color:#d7d0c1;padding:22px 5vw;display:flex;justify-co
   border:0;
   box-shadow:none;
 }
+
+/* Final clean yearbook avatar: only the site's Polaroid frame remains */
+.portrait-placeholder{
+  position:relative;
+  overflow:hidden;
+  background:#17478f;
+}
+.portrait-placeholder img{
+  position:static;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center 38%;
+  transform:none;
+  border:0;
+  box-shadow:none;
+  display:block;
+}
