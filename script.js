@@ -67,3 +67,94 @@ document.querySelectorAll(".scene-card").forEach(card=>{
  io.observe(card);
 });
 
+
+
+/* Portfolio motion + yearbook page turn */
+(() => {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const revealTargets = [
+    ".hero-board",".locker-card",".scene-title",".scene-card",
+    ".yearbook-heading",".profile-note",".skills-card",".clubs-board",
+    ".experience-row",".education-strip article",".contact-card"
+  ];
+  const nodes=[...document.querySelectorAll(revealTargets.join(","))];
+  nodes.forEach((el,i)=>{
+    el.classList.add("reveal-on-scroll");
+    if(i%3===1) el.classList.add("from-left");
+    if(i%3===2) el.classList.add("from-right");
+  });
+
+  if(reduced){
+    nodes.forEach(el=>el.classList.add("is-visible"));
+  }else{
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+        }else if(entry.boundingClientRect.top > 0){
+          entry.target.classList.remove("is-visible");
+        }
+      });
+    },{threshold:.14,rootMargin:"0px 0px -8% 0px"});
+    nodes.forEach(el=>revealObserver.observe(el));
+  }
+
+  const contact=document.querySelector(".contact-stage");
+  if(contact && !reduced){
+    const contactObserver=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) contact.classList.add("reveal-contact");
+        else if(e.boundingClientRect.top>0) contact.classList.remove("reveal-contact");
+      });
+    },{threshold:.35});
+    contactObserver.observe(contact);
+  }
+
+  const book=document.querySelector(".yearbook-page");
+  const pages=[...document.querySelectorAll(".book-sheet")];
+  const prev=document.querySelector(".book-prev");
+  const next=document.querySelector(".book-next");
+  const label=document.querySelector(".book-page-label");
+  const dots=[...document.querySelectorAll(".book-dots span")];
+  let page=0, locked=false;
+
+  function showPage(nextPage,dir=1){
+    if(!pages.length || locked || nextPage===page) return;
+    locked=true;
+    const current=pages[page];
+    const incoming=pages[nextPage];
+    current.classList.add("turn-out");
+    incoming.classList.add("active");
+    incoming.style.transformOrigin=dir>0?"left center":"right center";
+    page=nextPage;
+    if(label) label.textContent=String(page+1).padStart(2,"0")+" / "+String(pages.length).padStart(2,"0");
+    dots.forEach((d,i)=>d.classList.toggle("active",i===page));
+    setTimeout(()=>{
+      pages.forEach((p,i)=>{
+        p.classList.toggle("active",i===page);
+        p.classList.remove("turn-out");
+        p.style.transformOrigin="";
+      });
+      locked=false;
+    }, reduced?10:720);
+  }
+
+  if(book && pages.length){
+    book.classList.add("book-enabled");
+    pages.forEach((p,i)=>p.classList.toggle("active",i===0));
+    prev?.addEventListener("click",()=>showPage((page-1+pages.length)%pages.length,-1));
+    next?.addEventListener("click",()=>showPage((page+1)%pages.length,1));
+    document.addEventListener("keydown",e=>{
+      if(!book.matches(":hover")) return;
+      if(e.key==="ArrowLeft") prev?.click();
+      if(e.key==="ArrowRight") next?.click();
+    });
+    let sx=0;
+    book.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
+    book.addEventListener("touchend",e=>{
+      const dx=e.changedTouches[0].clientX-sx;
+      if(Math.abs(dx)>55) (dx<0?next:prev)?.click();
+    },{passive:true});
+  }
+})();
