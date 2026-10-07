@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&family=Special+Elite&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=school-6">
+<link rel="stylesheet" href="styles.css?v=school-7">
 </head>
 <body>
 <div class="paper-noise" aria-hidden="true"></div>
@@ -130,6 +130,14 @@
       <p data-i18n="profileIntro">A background that crosses operations, education, legal support, CRM, editorial production and modern web development.</p>
     </div>
 
+    <div class="book-controls" aria-label="Yearbook pages">
+      <button class="book-arrow book-prev" type="button" aria-label="Previous page">←</button>
+      <div class="book-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+      <span class="book-page-label">01 / 03</span>
+      <button class="book-arrow book-next" type="button" aria-label="Next page">→</button>
+    </div>
+
+    <div class="book-sheet active" data-book-page="0">
     <div class="profile-story-grid">
       <article class="profile-note big-note">
         <span class="tape"></span>
@@ -152,6 +160,8 @@
       </article>
     </div>
 
+    </div>
+    <div class="book-sheet" data-book-page="1">
     <div class="clubs-board">
       <header><span data-i18n="clubsLabel">CLUBS & ACTIVITIES</span><h3 data-i18n="clubsTitle">Tools I actually use across the projects.</h3></header>
       <div class="club-grid">
@@ -170,6 +180,8 @@
       </div>
     </div>
 
+    </div>
+    <div class="book-sheet" data-book-page="2">
     <div class="experience-board">
       <div class="experience-title"><span data-i18n="experienceLabel">WORK EXPERIENCE / TRANSCRIPT</span><h3 data-i18n="experienceTitle">Professional experience behind the portfolio.</h3></div>
 
@@ -224,6 +236,7 @@
       <article><span data-i18n="degreeLabel">DEGREE</span><h4 data-i18n="pedagogyDegree">Pedagogy</h4><p>Universidade Federal de Sergipe · 2019 — 2022</p></article>
       <article><span data-i18n="courseworkLabel">COURSEWORK</span><h4 data-i18n="courseworkTitle">Front-end · Power BI · Programming Logic</h4><p data-i18n="courseworkDesc">HTML · CSS · JavaScript · React · Power BI · Logic</p></article>
     </div>
+    </div>
   </div>
 </section>
 
@@ -245,6 +258,6 @@
 </main>
 
 <footer><span data-i18n="footerLeft">AD / PORTFOLIO</span><span data-i18n="footerRight">Aracaju, Brazil · 2026</span></footer>
-<script src="script.js?v=school-6"></script>
+<script src="script.js?v=school-7"></script>
 </body>
 </html>
