@@ -1,33 +1,49 @@
 const copy={
-en:{availability:"available for remote work",hero1:"I build useful",hero2:"digital things.",lead:"Web interfaces, data-driven products and operational systems shaped by real experience in customer support, administration and process organization.",seeWork:"Explore projects ↓",years:"years professional experience",featured:"featured GitHub projects",special:"Turn messy workflows and information into something clear, usable and easier to operate.",projectsTitle:"Projects with context, not just screenshots.",projectsIntro:"Each project shows how I think: structure first, interface second, usefulness always.",dcDesc:"An independent music-chart platform with weekly rankings, historical archives, chart movement, artist and album pages, responsive navigation and a growing data layer.",vitaDesc:"Responsive institutional redesign with clearer hierarchy, stronger CTAs, accessibility-minded structure and a 360° campus experience.",brDesc:"Historical music-chart interface using React and TypeScript with structured datasets, routing and ranking-oriented visualizations.",awardsDesc:"Interactive awards archive with edition navigation, category browsing, search, winner states and responsive presentation.",aboutTitle:"A developer who understands the workflow behind the screen.",story1:"My technology work sits on top of a practical background in administration, legal support, customer service, CRM, financial routines and process automation.",story2:"That changes the way I build: I care about what a person needs to do, what information they need, what can go wrong, and how the interface can reduce friction.",gitTitle:"Code leaves a trail.",gitNote:"A visual nod to GitHub activity. Open my profile for the live contribution history.",contactTitle:"Tell me what needs to be built."},
-pt:{availability:"disponível para trabalho remoto",hero1:"Eu construo coisas",hero2:"digitais úteis.",lead:"Interfaces web, produtos orientados a dados e sistemas operacionais moldados por experiência real em atendimento, administração e organização de processos.",seeWork:"Explorar projetos ↓",years:"anos de experiência profissional",featured:"projetos GitHub em destaque",special:"Transformar fluxos e informações confusas em algo claro, utilizável e mais fácil de operar.",projectsTitle:"Projetos com contexto, não só screenshots.",projectsIntro:"Cada projeto mostra como eu penso: estrutura primeiro, interface depois, utilidade sempre.",dcDesc:"Plataforma independente de charts musicais com rankings semanais, arquivo histórico, movimentação, páginas de artistas e álbuns, navegação responsiva e uma camada crescente de dados.",vitaDesc:"Redesign institucional responsivo com hierarquia mais clara, CTAs fortes, estrutura voltada à acessibilidade e experiência de visita 360°.",brDesc:"Interface histórica de charts construída em React e TypeScript, combinando datasets estruturados, rotas e visualizações orientadas a rankings.",awardsDesc:"Arquivo interativo de premiações com navegação por edições, categorias, busca, estados de vencedores e apresentação responsiva.",aboutTitle:"Um desenvolvedor que entende o fluxo por trás da tela.",story1:"Meu trabalho em tecnologia se apoia numa base prática em administração, suporte jurídico, atendimento, CRM, rotinas financeiras e automação de processos.",story2:"Isso muda a forma como eu construo: penso no que a pessoa precisa fazer, nas informações que precisa encontrar, no que pode dar errado e em como a interface reduz atrito.",gitTitle:"Código deixa rastros.",gitNote:"Uma referência visual à atividade no GitHub. Abra meu perfil para ver o histórico real de contribuições.",contactTitle:"Me diga o que precisa ser construído."}
-};
-let lang="en";const toggle=document.getElementById("langToggle");
-function applyLang(){document.documentElement.lang=lang==="en"?"en":"pt-BR";document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(copy[lang][k])el.textContent=copy[lang][k]});toggle.textContent=lang==="en"?"PT":"EN"}
-toggle.addEventListener("click",()=>{lang=lang==="en"?"pt":"en";applyLang()});
-
-const intro=document.getElementById("intro"),fill=document.getElementById("bootFill"),boot=document.getElementById("bootText");
-const steps=[["loading identity…",18],["reading projects…",42],["mapping experience…",67],["building interface…",86],["ready.",100]];
-let s=0;function next(){if(s>=steps.length){setTimeout(()=>intro.classList.add("hide"),350);return}boot.textContent=steps[s][0];fill.style.width=steps[s][1]+"%";s++;setTimeout(next,420)}setTimeout(next,180);
-function skip(){intro.classList.add("hide")}document.getElementById("skipIntro").onclick=skip;document.addEventListener("keydown",e=>{if(e.key==="Escape")skip()});
-
-const contrib=document.getElementById("contrib");
-for(let i=0;i<182;i++){const b=document.createElement("i");const n=(i*17+i*i*3+11)%13;b.className=n<6?"":n<9?"l1":n<11?"l2":n===11?"l3":"l4";contrib.appendChild(b)}
-
-const out=document.getElementById("termOutput"),input=document.getElementById("termInput");
-const commands={
-help:["commands: projects, contact, resume, github, clear, secret"],
-projects:["featured: Daegon Charts, Colégio Vita, Brazil Charts, Daegon Awards"],
-contact:["email: adilsondantas2015@gmail.com","location: Aracaju, Brazil","status: open to remote work"],
-resume:["open: resume-en.html","open: resume-pt.html"],
-github:["github.com/dantaswt"],
-secret:["you found one. hint: try typing 'daegon'"],
-daegon:["secret unlocked: charts are data stories with a weekly heartbeat."],
-clear:[]
-};
-let secrets=new Set();
-function run(cmd){const c=cmd.trim().toLowerCase();if(c==="clear"){out.innerHTML="";return}const lines=commands[c]||[`command not found: ${c}. try 'help'`];if(c==="secret"||c==="daegon")secrets.add(c);if(c==="hire")secrets.add("hire");document.getElementById("secretCount").textContent=`secrets ${Math.min(secrets.size,3)}/3`;lines.forEach(line=>{const p=document.createElement("p");p.textContent=line;out.appendChild(p)});out.scrollTop=out.scrollHeight}
-document.getElementById("termForm").addEventListener("submit",e=>{e.preventDefault();run(input.value);input.value=""});
-document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>run(b.dataset.cmd));
-document.querySelector(".hire-btn").addEventListener("dblclick",()=>{secrets.add("hire");document.getElementById("secretCount").textContent=`secrets ${Math.min(secrets.size,3)}/3`});
+en:{
+navProjects:"Scene Selection",navProfile:"Yearbook",navContact:"Contact",
+heroA:"Web, data &",heroB:"digital operations.",
+heroLead:"I turn complex workflows, information and ideas into clear digital products — with a little stage energy.",
+menuProjects:"Scene Selection",menuProfile:"Player Profile",menuResume:"Resume / CV",menuContact:"Contact",
+projectsTitle:"Featured projects",
+chartsDesc:"Music-chart platform with weekly rankings, archives, artist and album pages, historical data and responsive chart experiences.",
+musicDesc:"A streaming-chart experience inspired by editorial music platforms, reading weekly Songs, Albums and Artists data.",
+chatDesc:"CRM and messaging concept shaped by hands-on experience with customer service, WhatsApp workflows and administrative operations.",
+educaDesc:"School-management product inspired by real administrative routines: enrollment, students, teachers, grades, calendars and report cards.",
+schoolDesc:"An original school website concept focused on clear institutional communication, responsive structure and a stronger digital experience.",
+profileTitle:"The person behind the projects.",
+profileText:"My background connects administration, legal support, customer service, CRM and process organization with web development and product thinking.",
+contactTitle:"Let’s build the next project.",
+contactText:"Remote opportunities, web projects, operations, support and digital product work."
+},
+pt:{
+navProjects:"Seleção de Cenas",navProfile:"Anuário",navContact:"Contato",
+heroA:"Web, dados &",heroB:"operações digitais.",
+heroLead:"Transformo fluxos complexos, informação e ideias em produtos digitais claros — com um pouco de energia de palco.",
+menuProjects:"Seleção de Cenas",menuProfile:"Perfil do Jogador",menuResume:"Currículo / CV",menuContact:"Contato",
+projectsTitle:"Projetos em destaque",
+chartsDesc:"Plataforma de charts musicais com rankings semanais, arquivo histórico, páginas de artistas e álbuns e experiências responsivas.",
+musicDesc:"Experiência de charts de streaming inspirada em plataformas editoriais de música, lendo dados semanais de Songs, Albums e Artists.",
+chatDesc:"Conceito de CRM e mensageria moldado por experiência prática com atendimento, WhatsApp e operações administrativas.",
+educaDesc:"Produto de gestão escolar inspirado em rotinas administrativas reais: matrículas, alunos, professores, notas, calendários e boletins.",
+schoolDesc:"Conceito original de site escolar focado em comunicação institucional clara, responsividade e uma experiência digital mais forte.",
+profileTitle:"A pessoa por trás dos projetos.",
+profileText:"Minha trajetória conecta administração, suporte jurídico, atendimento, CRM e organização de processos com desenvolvimento web e pensamento de produto.",
+contactTitle:"Vamos construir o próximo projeto.",
+contactText:"Oportunidades remotas, projetos web, operações, suporte e trabalho com produtos digitais."
+}};
+let lang=localStorage.getItem("portfolioLang")||"en";
+function applyLang(){
+ document.documentElement.lang=lang==="pt"?"pt-BR":"en";
+ document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(copy[lang][k])el.textContent=copy[lang][k]});
+ document.getElementById("langToggle").textContent=lang==="en"?"PT":"EN";
+}
+document.getElementById("langToggle").onclick=()=>{lang=lang==="en"?"pt":"en";localStorage.setItem("portfolioLang",lang);applyLang()};
 applyLang();
+
+document.querySelectorAll(".scene-card").forEach((card,i)=>{
+ card.style.opacity="0";card.style.transform+=" translateY(18px)";
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+   if(e.isIntersecting){e.target.style.transition="opacity .55s ease, transform .55s ease";e.target.style.opacity="1";e.target.style.transform=e.target.style.transform.replace(" translateY(18px)","");io.unobserve(e.target)}
+ }),{threshold:.12});
+ io.observe(card);
+});
