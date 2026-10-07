@@ -165,3 +165,14 @@ footer{background:#171b27;color:#d7d0c1;padding:22px 5vw;display:flex;justify-co
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal-on-scroll{opacity:1!important;transform:none!important;filter:none!important}
 }
+
+.linkedin-top{
+  border:2px solid rgba(255,255,255,.72);
+  color:#fff;
+  padding:9px 12px;
+  font-size:11px;
+  font-weight:800;
+  transition:transform .2s ease,background .2s ease,color .2s ease;
+}
+.linkedin-top:hover{background:#fff;color:#74202a;transform:translateY(-2px)}
+@media(max-width:640px){.linkedin-top{display:none}}
