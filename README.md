@@ -1,18 +1,20 @@
-# Adilson Alves Dantas — Portfolio
+# Adilson Dantas — Portfolio
 
-Professional portfolio presenting selected GitHub projects and experience across front-end development and digital operations.
+Personal portfolio with an original school-musical / yearbook / scene-selection visual direction.
 
 ## Featured projects
 - Daegon Charts
-- Colégio Vita — Redesign Concept
-- Brazil Charts
-- Daegon Awards
+- Daegon Music
+- Daegon Chat
+- Daegon Educa
+- Daegon School
 
 ## Features
-- Responsive layout
+- Responsive HTML/CSS/JavaScript
 - English / Portuguese language switch
-- Direct links to GitHub repositories and live demos
-- Resume downloads in EN and PT-BR
+- Musical-school inspired interface
+- Scene-selection project navigation
+- Resume pages in EN and PT-BR
 - No framework/build step required
 
 ## Run locally
