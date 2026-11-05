@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daeg0n.github.io/portfolio/sitemap.xml
