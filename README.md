@@ -1,21 +1,27 @@
-# Adilson Dantas — Portfolio
+# Adilson Dantas — Web Developer & Digital Solutions Portfolio
 
-Personal portfolio with an original school-musical / yearbook / scene-selection visual direction.
+**Portfolio:** https://daeg0n.github.io/portfolio/
 
-## Featured projects
+I design and build responsive websites, landing pages, website redesigns and practical digital solutions for businesses. Available for remote freelance projects with clients in Brazil and internationally.
+
+**Services:** Business websites · Landing pages · Front-end development · Website redesign · CRM and digital operations
+
+**Languages:** English · Português · Español
+
+## Featured work
 - Daegon Charts
 - Daegon Music
 - Daegon Chat
 - Daegon Educa
 - Daegon School
 
-## Features
-- Responsive HTML/CSS/JavaScript
-- English / Portuguese language switch
-- Musical-school inspired interface
-- Scene-selection project navigation
-- Resume pages in EN and PT-BR
-- No framework/build step required
+## Contact
+- [View portfolio](https://daeg0n.github.io/portfolio/)
+- [LinkedIn](https://www.linkedin.com/in/adilson-dantas-a33692203/)
+- [Email](mailto:adilsondantas2015@gmail.com)
+
+## Technical details
+Responsive HTML, CSS and JavaScript. Multilingual interface (English, Portuguese and Spanish), with no framework or build step required.
 
 ## Run locally
-Open `index.html` directly or use any static HTTP server.
+Open `index.html` directly or serve it from a static web server.
